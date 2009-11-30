@@ -388,7 +388,7 @@ class YodaspeakifyServlet extends AbstractRobotServlet {
             text += yodaspeakify(sentence.trim() + punctuations[i]) + "  "
         }
         
-        textView.replace(blip. text.trim())
+        textView.replace(text.trim())
     }
     
     public String yodaspeakify(String sentence) {        
