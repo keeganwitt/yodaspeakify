@@ -6,6 +6,10 @@ package com.appspot.yodaspeakify;
 
 import com.google.wave.api.*
 
+/**
+ * This class provides the servlet that will answer requests over the wave
+ * robot gateway
+ */
 class YodaspeakifyServlet extends AbstractRobotServlet {
     // TODO: add more verbs, with various tenses
     private static String wordBank = """
@@ -385,12 +389,21 @@ class YodaspeakifyServlet extends AbstractRobotServlet {
         def sentences = blipText.split(/[?|\!|\.]+/)
         def punctuations = blipText.findAll(/\!|\?|\./)
         sentences.eachWithIndex() { String sentence, int i->
-            text += yodaspeakify(sentence.trim() + punctuations[i]) + "  "
+            if (punctuations[i]) {
+                text += yodaspeakify(sentence.trim() + punctuations[i]) + "  "
+            } else {
+                text += yodaspeakify(sentence.trim()) + "  "
+            }
         }
         
         textView.replace(text.trim())
     }
     
+    /**
+     * This method performs the translation to Yodaspeak on individual sentences
+     * @param sentence the sentence to translate to Yodaspeak
+     * @return the translated sentence
+     */
     public String yodaspeakify(String sentence) {        
         //TODO: load wordbank, contractions, relaxed pronunciations, and colloqialisms from files?
         
