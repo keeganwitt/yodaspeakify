@@ -5,5 +5,5 @@
 		<w:capability name="BLIP_SUBMITTED" content="true" />
 	</w:capabilities>
 	<w:profile name="Yodaspeakify" imageurl="/icon.jpg" profileurl="/_wave/profile.xml"/>
-	<w:version>alpha-1</w:version>
+	<w:version>alpha-1-1</w:version>
 </w:robot>

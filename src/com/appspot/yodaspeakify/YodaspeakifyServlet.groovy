@@ -11,6 +11,7 @@ import com.google.wave.api.*
  * robot gateway
  */
 class YodaspeakifyServlet extends AbstractRobotServlet {
+    //TODO: load wordbank, contractions, relaxed pronunciations, and colloqialisms from files?
     // TODO: add more verbs, with various tenses
     private static String wordBank = """
     	accept
@@ -345,14 +346,15 @@ class YodaspeakifyServlet extends AbstractRobotServlet {
     	would
     	write
     	"""
+    private static def words = wordBank.split()
     
     // TODO: add rest of relaxed pronunciations
     //http://www.davidtulga.com/contractions.htm
-    private static def HashMap<String, String> relaxedPronunciations = ["wanna":"want to", "gunna":"going to", "coulda":"could have", "musta":"must have", "shoulda":"should have", "gotta":"got to", "ya":"you", "y'all":"you all", "lemme":"let me", "oughta":"ought to", "whatcha":"what are you", "getcha":"get you", "gotcha":"got you", "betcha":"bet you", "kinda":"kind of", "gimme":"give me"];
+    private static def HashMap<String, String> relaxedPronunciations = ["wanna":"want to", "gunna":"going to", "coulda":"could have", "musta":"must have", "shoulda":"should have", "gotta":"got to", "ya":"you", "y'all":"you all", "lemme":"let me", "oughta":"ought to", "whatcha":"what are you", "getcha":"get you", "gotcha":"got you", "betcha":"bet you", "kinda":"kind of", "gimme":"give me"]
     
     // TODO: add rest of contractions
     //http://www.zoomastronomy.com/grammar/contractions/list.shtml
-    private static def HashMap<String, String> contractions = [["i'm":"I am", "i've":"I have", "i'll":"I will", "i'd":"I would", "you'll":"you will", "you've":"you have", "you're":"you are", "we're":"we are", "we've":"we have", "we'll":"we will", "he'll":"he will", "she'll":"she will", "he's":"he is", "she's":"she is", "who'll":"who will", "who's":"who is", "they'll":"they will", "they're":"they are", "that'll":"that will", "that's":"that is", "it's":"it is", "it'll":"it will", "how'll":"how will", "how's":"how is", "where'll":"where will", "where's":"where is", "when'll":"when will", "when's":"when is", "why'll":"why will", "why's":"why is", "what'll":"what will", "what's":"what is"]];
+    private static def HashMap<String, String> contractions = [["i'm":"I am", "i've":"I have", "i'll":"I will", "i'd":"I would", "you'll":"you will", "you've":"you have", "you're":"you are", "we're":"we are", "we've":"we have", "we'll":"we will", "he'll":"he will", "she'll":"she will", "he's":"he is", "she's":"she is", "who'll":"who will", "who's":"who is", "they'll":"they will", "they're":"they are", "that'll":"that will", "that's":"that is", "it's":"it is", "it'll":"it will", "how'll":"how will", "how's":"how is", "where'll":"where will", "where's":"where is", "when'll":"when will", "when's":"when is", "why'll":"why will", "why's":"why is", "what'll":"what will", "what's":"what is"]]
     
     private static def HashMap<String, String> colloquialisms = ["howdy":"hello"]
     
@@ -405,10 +407,6 @@ class YodaspeakifyServlet extends AbstractRobotServlet {
      * @return the translated sentence
      */
     public String yodaspeakify(String sentence) {        
-        //TODO: load wordbank, contractions, relaxed pronunciations, and colloqialisms from files?
-        
-        def words = wordBank.split()
-        
         // TODO: retain case, find a way to check for all cases of contractions and relaxed pronunciations
         String newSentence = sentence.toLowerCase()
         
@@ -430,7 +428,7 @@ class YodaspeakifyServlet extends AbstractRobotServlet {
         // find where to pivot on, pivot on verb furthest into sentence
         int index = -1
         words.each() {String word ->
-            String wordToFind = newSentence.find(/$word[ |.|!|?]/)
+            String wordToFind = newSentence.find(/[\W|^]$word/)
             int newIndex = newSentence.indexOf("$wordToFind")
             if (newIndex != -1 && newIndex > index) {
                 index = newIndex
