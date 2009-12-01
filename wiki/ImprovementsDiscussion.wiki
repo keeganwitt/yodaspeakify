@@ -1,4 +1,4 @@
-= Introduction =
+== Introduction ==
 This page is to discuss what might be improved for future versions.
 I'm specifically interested in
   # Verbs that should be rotated on
@@ -6,8 +6,8 @@ I'm specifically interested in
   # Sentences you have run across that came out really weird and un-Yoda-like
 and of course any other comments you have are welcome as well. Have at it.
 
-= Additional Verbs Needed =
+== Additional Verbs Needed ==
 
-= Strange Translations =
+== Strange Translations ==
 
-= Additional Comments =
+== Additional Comments ==
