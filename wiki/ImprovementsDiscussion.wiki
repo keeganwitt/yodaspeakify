@@ -1,7 +1,7 @@
 == Introduction ==
 This page is to discuss what might be improved for future versions.
 I'm specifically interested in
-  # Verbs that should be rotated on
+  # Verbs that need added, to rotate on
   # Whether the algorithm should prefer verbs towards the beginning or end of the sentence (currently prefers end) or other algorithm ideas
   # Sentences you have run across that came out really weird and un-Yoda-like
 and of course any other comments you have are welcome as well. Have at it.
