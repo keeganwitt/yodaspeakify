@@ -3,9 +3,22 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/groovy-all-1.6.5.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/json.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jsonrpc.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-robot-api.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-1.0-sdk-1.3.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-labs-1.3.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.3.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/datanucleus-appengine-1.0.7.final.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/datanucleus-jpa-1.1.5.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/geronimo-jpa_3.0_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/groovy-all-1.7.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gson.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jdo2-api-2.3-eb.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jsr107cache-1.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/oauth-20090617.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-model-20100129.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/wave-robot-api-20100408.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
