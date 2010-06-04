@@ -6,24 +6,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<servlet>
 		<servlet-name>yodaspeakify</servlet-name>
-		<servlet-class>com.appspot.yodaspeakify.YodaspeakifyServlet</servlet-class>
+		<servlet-class>com.appspot.yodaspeakify.Yodaspeakify</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>yodaspeakify</servlet-name>
-		<!-- <url-pattern>/yodaspeakify</url-pattern> -->
-		<url-pattern>/_wave/robot/jsonrpc</url-pattern>
+		<url-pattern>/_wave/*</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>profile</servlet-name>
-		<servlet-class>com.appspot.yodaspeakify.YodaspeakifyProfile</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>profile</servlet-name>
-		<url-pattern>/_wave/robot/profile</url-pattern>
-	</servlet-mapping>
-	<!-- This is commented out because the app engine chokes on it for reasons
-		unknown -->
-	<!-- <welcome-file-list>
-		<welcome-file>/index.html</welcome-file>
-	</welcome-file-list> -->
 </web-app>
